@@ -7,14 +7,24 @@ from aiogram.dispatcher.fsm.storage.memory import MemoryStorage
 from tgbot.config import load_config
 from tgbot.handlers.admin import admin_router
 from tgbot.handlers.user import user_router
+from tgbot.handlers.aboutApp import aboutApp_router
+from tgbot.handlers.aboutBranch import aboutBranch_router
+from tgbot.handlers.aboutDonate import aboutDonate_router
+from tgbot.handlers.partner import partner_router
+from tgbot.handlers.servus import servus_router
 from tgbot.middlewares.config import ConfigMiddleware
 from tgbot.services import broadcaster
+
+from tgbot.db import user_db,update_user
 
 logger = logging.getLogger(__name__)
 
 
+
+
 async def on_startup(bot: Bot, admin_ids: list[int]):
-    await broadcaster.broadcast(bot, admin_ids, "Бот був запущений")
+    await broadcaster.broadcast(bot, admin_ids, "Бот успешно запущен")
+
 
 
 def register_global_middlewares(dp: Dispatcher, config):
@@ -37,12 +47,18 @@ async def main():
     for router in [
         admin_router,
         user_router,
+        aboutApp_router,
+        aboutBranch_router,
+        aboutDonate_router,
+        partner_router,
+        servus_router,
     ]:
         dp.include_router(router)
 
     register_global_middlewares(dp, config)
 
     await on_startup(bot, config.tg_bot.admin_ids)
+    await user_db.postgre_start()
     await dp.start_polling(bot)
 
 
