@@ -108,7 +108,7 @@ def servus():
         types.KeyboardButton(text="Инвестиционные идеи")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Торговый бот")
+        types.KeyboardButton(text="Торговый робот")
     )
     home_buttons.add(
         types.KeyboardButton(text="Копитрейд")
@@ -147,6 +147,17 @@ def servus_study_get():
     home_buttons.adjust(1)
     return home_buttons
 
+def servus_study_reload():
+    home_buttons = ReplyKeyboardBuilder()
+    home_buttons.add(
+        types.KeyboardButton(text="Пройти заново")
+    )
+    home_buttons.add(
+        types.KeyboardButton(text="Главное меню")
+    )
+    home_buttons.adjust(1)
+    return home_buttons
+
 def servus_invest():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
@@ -176,6 +187,17 @@ def servus_trade_bot():
         types.KeyboardButton(text="Главное меню")
     )
     home_buttons.adjust(2)
+    return home_buttons
+
+def servus_trade_bot_stat():
+    home_buttons = ReplyKeyboardBuilder()
+    home_buttons.add(
+        types.KeyboardButton(text="Задать вопрос")
+    )
+    home_buttons.add(
+        types.KeyboardButton(text="Главное меню")
+    )
+    home_buttons.adjust(1)
     return home_buttons
 
 def servus_copytrade():

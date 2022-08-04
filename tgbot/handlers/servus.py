@@ -9,7 +9,7 @@ from tgbot.misc.messages import inf
 from tgbot.misc.states import GetPhone, question
 from tgbot.misc.function import auf_status, alert_admins
 
-from tgbot.keyboards.textBtn import HomeBtn,servus_study_get, About_libertex,backHome,send_phone,servus,servus_study, servus_invest,servus_trade_bot,servus_copytrade
+from tgbot.keyboards.textBtn import HomeBtn, servus_trade_bot_stat, servus_study_get, About_libertex,backHome,send_phone,servus,servus_study, servus_invest,servus_trade_bot,servus_copytrade
 
 from tgbot.db import update_user
 
@@ -82,7 +82,7 @@ async def user_start(message: Message, state: FSMContext):
     await bot.send_photo(userid, photo, inf['info_servus_invest_stat'],reply_markup=btn.as_markup(resize_keyboard=True))
     
 # ТОРГОВЫЙ БОТ
-@servus_router.message(text=["Торговый бот"])
+@servus_router.message(text=["Торговый робот"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     btn = servus_trade_bot()
@@ -92,7 +92,7 @@ async def user_start(message: Message, state: FSMContext):
 @servus_router.message(text=["Статистика робота"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
-    btn = servus_trade_bot()
+    btn = servus_trade_bot_stat()
     photo = FSInputFile('tgbot/img/bot_stat.png')
     await bot.send_photo(userid, photo, inf['info_servus_tradeBot_stat'],reply_markup=btn.as_markup(resize_keyboard=True))
     
