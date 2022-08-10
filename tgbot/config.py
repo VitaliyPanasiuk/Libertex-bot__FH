@@ -1,8 +1,9 @@
 from dataclasses import dataclass
 
 from environs import Env
+import os
 
-DB_URI = 'postgres://rlfdvcditosxia:550d193d8fb7962cb85178198e5f9612dbf11e12a08d2a0731adbfffb1943561@ec2-54-228-218-84.eu-west-1.compute.amazonaws.com:5432/d9s51kmjiegnth'
+DB_URI = 'postgres://ioynlgrpfnrytg:ab4751269a3d014f61d9dbbcb15315afd56e2382f00ffd6c95e0046403772d82@ec2-44-206-197-71.compute-1.amazonaws.com:5432/d8958aaedan035'
 import psycopg2
 from psycopg2 import sql
 
@@ -53,16 +54,19 @@ def load_config(path: str = None):
     admins = get_admins()
     return Config(
         tg_bot=TgBot(
-            token=env.str("BOT_TOKEN"),
+            token=os.environ['BOT_TOKEN'],
             admin_ids=list(map(int, admins)),
-            use_redis=env.bool("USE_REDIS"),
+            use_redis=os.environ['USE_REDIS'],
+            # token=env.str("BOT_TOKEN"),
+            # admin_ids=list(map(int, admins)),
+            # use_redis=env.bool("USE_REDIS"),
             
         ),
         db=DbConfig(
-            host=env.str('DB_HOST'),
-            password=env.str('DB_PASS'),
-            user=env.str('DB_USER'),
-            database=env.str('DB_NAME')
+            host='',
+            password='',
+            user='',
+            database=''
         ),
         misc=Miscellaneous()
     )

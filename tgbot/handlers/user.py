@@ -13,9 +13,8 @@ from tgbot.keyboards.textBtn import HomeBtn, About_libertex,backHome,send_phone,
 
 from tgbot.db import update_user
 
-
-config = load_config(".env")
 user_router = Router()
+config = load_config(".env")
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
 @user_router.message(commands=["start"])
