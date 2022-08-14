@@ -49,6 +49,7 @@ async def admin_start(message: Message, state: FSMContext):
         await bot.send_message(i,text)
         
     await bot.send_message(message.from_user.id,"Сообщение было разослано всем пользователям")
+    await state.clear()
     
 
 @admin_router.message(commands=["requests"], state="*")
