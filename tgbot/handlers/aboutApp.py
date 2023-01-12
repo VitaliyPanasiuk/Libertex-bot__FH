@@ -15,7 +15,7 @@ config = load_config(".env")
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
 
-@aboutApp_router.message(text=["«🎓 Курсы обучения"])
+@aboutApp_router.message(text=["🎓 Курсы обучения"])
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex()
