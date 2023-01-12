@@ -21,8 +21,8 @@ bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     await update_user.update_last_article(userid,'💱 Обучение спекулятивному трейдингу')
-    btn = servus()
-    await bot.send_message(userid, inf['info_servus'],reply_markup=btn.as_markup(resize_keyboard=True))
+    btn = servus_study()
+    await bot.send_message(userid, inf['info_servus_study'],reply_markup=btn.as_markup(resize_keyboard=True))
     
 # ОБУЧЕНИЕ
 @servus_router.message(text=["Обучение"])
@@ -32,7 +32,7 @@ async def user_start(message: Message, state: FSMContext):
     photo = FSInputFile('tgbot/img/study.png')
     await bot.send_photo(userid, photo, inf['info_servus_study'],reply_markup=btn.as_markup(resize_keyboard=True))
     
-@servus_router.message(text=["Записаться на ближайший курс"])
+@servus_router.message(text=["📝 Записаться на ближайший курс"])
 async def user_start(message: Message):
     firstName = message.from_user.first_name
     userid = message.from_user.id
@@ -41,14 +41,14 @@ async def user_start(message: Message):
     await update_user.make_claim(userid, 'enroll in a course', 'active', '-')
     await message.reply('Отлично, '+ firstName + '! Я передал Ваш вопрос специалисту и в скором времени он свяжется с Вами и ответит на все вопросы!',reply_markup=btn.as_markup(resize_keyboard=True))
 
-@servus_router.message(text=["Смотреть курс онлайн"])
+@servus_router.message(text=["🧑‍💻 Смотреть курс онлайн"])
 async def user_start(message: Message):
     firstName = message.from_user.first_name
     userid = message.from_user.id
     btn = servus_study_get()
     await message.reply(inf['servus_course'],reply_markup=btn.as_markup(resize_keyboard=True))
     
-@servus_router.message(text=["Получить весь курс обучения"])
+@servus_router.message(text=["🎓 Получить весь курс обучения"])
 async def user_start(message: Message):
     firstName = message.from_user.first_name
     userid = message.from_user.id
@@ -74,14 +74,14 @@ async def user_start(message: Message, state: FSMContext):
     photo = FSInputFile('tgbot/img/invest.jpg')
     await bot.send_photo(userid, photo, inf['info_servus_invest'],reply_markup=btn.as_markup(resize_keyboard=True))
     
-@servus_router.message(text=["Получить пример ИИ"])
+@servus_router.message(text=["🧾 Получить пример ИИ"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     btn = servus_invest()
     photo = FSInputFile('tgbot/img/invest_ex.png')
     await bot.send_photo(userid, photo, inf['info_servus_invest_ex'],reply_markup=btn.as_markup(resize_keyboard=True))
     
-@servus_router.message(text=["Статистика ИИ"])
+@servus_router.message(text=["📊 Статистика ИИ"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     btn = servus_invest()
@@ -96,7 +96,7 @@ async def user_start(message: Message, state: FSMContext):
     photo = FSInputFile('tgbot/img/bot.png')
     await bot.send_photo(userid, photo, inf['info_servus_tradeBot'],reply_markup=btn.as_markup(resize_keyboard=True))
 
-@servus_router.message(text=["Статистика робота"])
+@servus_router.message(text=["📊 Статистика робота"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     btn = servus_trade_bot_stat()

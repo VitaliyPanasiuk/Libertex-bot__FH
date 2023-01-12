@@ -15,15 +15,15 @@ partner_router = Router()
 config = load_config(".env")
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
-@partner_router.message(text=["Стать партнером Libertex"])
+@partner_router.message(text=["🤝 Стать партнером Libertex"])
 async def user_start(message: Message):
     btn = partner_btn()
     userid = message.from_user.id
-    await update_user.update_last_article(message.from_user.id,'Стать партнером Libertex')
+    await update_user.update_last_article(message.from_user.id,'🤝 Стать партнером Libertex')
     photo = FSInputFile('tgbot/img/partner.png')
     await bot.send_photo(userid, photo, inf['info_partner'],reply_markup=btn.as_markup(resize_keyboard=True))
 
-@partner_router.message(text=["Калькулятор доходности"])
+@partner_router.message(text=["🧮 Калькулятор доходности"])
 async def user_start(message: Message):
     btn = partner_btn()
     await message.reply(inf['info_partner_calc'],reply_markup=btn.as_markup(resize_keyboard=True))

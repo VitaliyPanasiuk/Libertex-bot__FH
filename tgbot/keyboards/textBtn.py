@@ -8,19 +8,30 @@ def HomeBtn():
         types.KeyboardButton(text="🎓 Курсы обучения")
     )
     home_buttons.add(
-        types.KeyboardButton(text="О Филиале")
+        types.KeyboardButton(text="🏦 О Филиале")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Трейдинг (Telegram канал)")
+        types.KeyboardButton(text="💵 Трейдинг (Telegram канал)")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Как поплнить/снять торговый счет?")
+        types.KeyboardButton(text="💰 Как пополнить/снять торговый счет?")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Стать партнером Libertex")
+        types.KeyboardButton(text="🤝 Стать партнером Libertex")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
+    )
+    home_buttons.adjust(2)
+    return home_buttons
+
+def tg_button():
+    home_buttons = ReplyKeyboardBuilder()
+    home_buttons.add(
+        types.KeyboardButton(text="Получить доступ в телеграм канал")
+    )
+    home_buttons.add(
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -28,33 +39,33 @@ def HomeBtn():
 def About_libertex():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Обучение Libertex")
+        types.KeyboardButton(text="🎓 Обучение Libertex")
     )
     home_buttons.add(
         types.KeyboardButton(text="💱 Обучение спекулятивному трейдингу")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
 def About_libertex_study():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Давайте следующий")
+        types.KeyboardButton(text="👌 Давайте следующий")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
 def About_libertex_study_ifo():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Давайте начнем")
+        types.KeyboardButton(text="👌 Давайте начнем")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -62,13 +73,13 @@ def About_libertex_study_ifo():
 def partner_btn():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Калькулятор доходности")
+        types.KeyboardButton(text="🧮 Калькулятор доходности")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Стать партнером")
+        types.KeyboardButton(text="🤝 Стать партнером")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -76,10 +87,10 @@ def partner_btn():
 def About_branch_donate():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -87,7 +98,7 @@ def About_branch_donate():
 def backHome():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     return home_buttons
 
@@ -102,48 +113,36 @@ def send_phone():
 def servus():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Обучение")
+        types.KeyboardButton(text="🎓 Обучение")
     )
+    # home_buttons.add(
+    #     types.KeyboardButton(text="🧾 Инвестиционные идеи")
+    # )
+    # home_buttons.add(
+    #     types.KeyboardButton(text="🤖 Торговый робот")
+    # )
+    # home_buttons.add(
+    #     types.KeyboardButton(text="📈 Закрытый ТГ канал с сигналами")
+    # )
     home_buttons.add(
-        types.KeyboardButton(text="Инвестиционные идеи")
-    )
-    home_buttons.add(
-        types.KeyboardButton(text="Торговый робот")
-    )
-    home_buttons.add(
-        types.KeyboardButton(text="Копитрейд")
-    )
-    home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
-
-def tg_button():
-    home_buttons = ReplyKeyboardBuilder()
-    home_buttons.add(
-        types.KeyboardButton(text="Получить доступ в телеграм канал")
-    )
-    home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
-    )
-    home_buttons.adjust(2)
-    return home_buttons
-
 
 def servus_study():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Записаться на ближайший курс")
+        types.KeyboardButton(text="📝 Записаться на ближайший курс")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Смотреть курс онлайн")
+        types.KeyboardButton(text="🧑‍💻 Смотреть курс онлайн")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons
@@ -151,10 +150,10 @@ def servus_study():
 def servus_study_get():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Получить весь курс обучения")
+        types.KeyboardButton(text="🎓 Получить весь курс обучения")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons
@@ -162,10 +161,10 @@ def servus_study_get():
 def servus_study_reload():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Пройти заново")
+        types.KeyboardButton(text="🎓 Пройти заново")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons
@@ -173,16 +172,16 @@ def servus_study_reload():
 def servus_invest():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Получить пример ИИ")
+        types.KeyboardButton(text="🧾 Получить пример ИИ")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Статистика ИИ")
+        types.KeyboardButton(text="📊 Статистика ИИ")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons
@@ -190,13 +189,13 @@ def servus_invest():
 def servus_trade_bot():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Статистика робота")
+        types.KeyboardButton(text="📊 Статистика робота")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -204,10 +203,10 @@ def servus_trade_bot():
 def servus_trade_bot_stat():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons
@@ -215,13 +214,13 @@ def servus_trade_bot_stat():
 def servus_copytrade():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="Статистика копитрейда")
+        types.KeyboardButton(text="📊 Статистика сигналов")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="🤔 Задать вопрос")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(2)
     return home_buttons
@@ -232,7 +231,7 @@ def slider():
         types.KeyboardButton(text="next")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Главное меню")
+        types.KeyboardButton(text="✅ Главное меню")
     )
     home_buttons.adjust(1)
     return home_buttons

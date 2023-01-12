@@ -19,7 +19,7 @@ config = load_config(".env")
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
 
-@tg_router.message(text=["Трейдинг (Telegram канал)"])
+@tg_router.message(text=["💵 Трейдинг (Telegram канал)"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
     await update_user.update_last_article(userid,'💱 Обучение спекулятивному трейдингу')

@@ -48,13 +48,13 @@ async def contacts(message: types.Message, state: FSMContext):
     # await bot.send_message(userid, inf['start'],reply_markup=btn.as_markup(resize_keyboard=True))
 
 
-@user_router.message(text=["Главное меню"])
+@user_router.message(text=["✅ Главное меню"])
 async def user_start(message: Message):
     btn = HomeBtn()
-    await message.reply('Главное меню', reply_markup=btn.as_markup(resize_keyboard=True))
+    await message.reply('✅ Главное меню', reply_markup=btn.as_markup(resize_keyboard=True))
     
     
-@user_router.message(text=["Задать вопрос"])
+@user_router.message(text=["🤔 Задать вопрос"])
 async def user_start(message: Message, state: FSMContext):
     btn = backHome()
     firstName = message.from_user.first_name

@@ -23,7 +23,7 @@ async def user_start(message: Message):
     photo = FSInputFile('tgbot/img/aboutApp.jpg')
     await bot.send_photo(userid, photo, inf['info_libertex'],reply_markup=btn.as_markup(resize_keyboard=True))
     
-@aboutApp_router.message(text=["Обучение Libertex"])
+@aboutApp_router.message(text=["🎓 Обучение Libertex"])
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex_study_ifo()
@@ -114,7 +114,7 @@ async def user_start(message: Message):
         await bot.send_message(userid, after_lesson['5'], reply_markup=btn.as_markup(resize_keyboard=True))
          
         
-@aboutApp_router.message(text=["Давайте следующий"])
+@aboutApp_router.message(text=["👌 Давайте следующий"])
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex_study()
@@ -198,7 +198,7 @@ async def user_start(message: Message):
         await bot.send_message(userid, after_lesson['5'], reply_markup=btn.as_markup(resize_keyboard=True))
        
         
-@aboutApp_router.message(text=["Пройти заново"])
+@aboutApp_router.message(text=["🎓 Пройти заново"])
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex_study_ifo()
