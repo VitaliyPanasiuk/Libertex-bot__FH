@@ -17,10 +17,10 @@ config = load_config(".env")
 servus_router = Router()
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
-@servus_router.message(text=["Об услугах Libertex"])
+@servus_router.message(text=["💱 Обучение спекулятивному трейдингу"])
 async def user_start(message: Message, state: FSMContext):
     userid = message.from_user.id
-    await update_user.update_last_article(userid,'Об услугах Libertex')
+    await update_user.update_last_article(userid,'💱 Обучение спекулятивному трейдингу')
     btn = servus()
     await bot.send_message(userid, inf['info_servus'],reply_markup=btn.as_markup(resize_keyboard=True))
     
@@ -55,7 +55,14 @@ async def user_start(message: Message):
     btn = servus_study_get()
     await alert_admins(bot, config.tg_bot.admin_ids ,userid)
     await update_user.make_claim(userid, 'enroll in a course', 'active', '-')
-    await message.reply('Отлично, '+ firstName + '! Я передал Ваш вопрос специалисту и в скором времени он свяжется с Вами.',reply_markup=btn.as_markup(resize_keyboard=True))
+    await message.reply("""Ваша заявка принята! 
+
+На нашем интенсиве мы рассмотрели все азы трейдинга, как торговать криптой, как создавать торговую систему, а также узнали какие методики используют наши приглашенные эксперты практикующие трейдеры. И даже получили первые прибыльные результаты✅
+
+Мы записали более 9 часов полезного контента🔥
+
+Не теряйте время! Модуль №1 доступен каждому и уже можете приступить к обучению 😉: https://youtu.be/s2RZgTXcj7s
+    """,reply_markup=btn.as_markup(resize_keyboard=True))
 
     
     

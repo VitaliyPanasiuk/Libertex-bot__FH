@@ -46,7 +46,10 @@ async def admin_start(message: Message, state: FSMContext):
     list_of_users = await get_list_of_users()
     
     for i in list_of_users:
-        await bot.send_message(i,text)
+        try:
+            await bot.send_message(i,text)
+        except:
+            pass
         
     await bot.send_message(message.from_user.id,"Сообщение было разослано всем пользователям")
     await state.clear()

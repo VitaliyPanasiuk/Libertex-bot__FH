@@ -15,11 +15,11 @@ config = load_config(".env")
 bot = Bot(token=config.tg_bot.token, parse_mode='HTML')
 
 
-@aboutApp_router.message(text=["О Приложении"])
+@aboutApp_router.message(text=["«🎓 Курсы обучения"])
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex()
-    await update_user.update_last_article(message.from_user.id,'О Приложении')
+    await update_user.update_last_article(message.from_user.id,'«🎓 Курсы обучения')
     photo = FSInputFile('tgbot/img/aboutApp.jpg')
     await bot.send_photo(userid, photo, inf['info_libertex'],reply_markup=btn.as_markup(resize_keyboard=True))
     
@@ -34,7 +34,7 @@ async def user_start(message: Message):
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex_study()
-    await update_user.update_last_article(message.from_user.id,'О Приложении')
+    await update_user.update_last_article(message.from_user.id,'🎓 Курсы обучения')
     answer = await get_lesson_libertex(userid)
     article= answer[0]
     lesson = answer[1]
@@ -118,7 +118,7 @@ async def user_start(message: Message):
 async def user_start(message: Message):
     userid = message.from_user.id
     btn = About_libertex_study()
-    await update_user.update_last_article(message.from_user.id,'О Приложении')
+    await update_user.update_last_article(message.from_user.id,'🎓 Курсы обучения')
     answer = await get_lesson_libertex(userid)
     article= answer[0]
     lesson = answer[1]

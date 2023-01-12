@@ -5,13 +5,13 @@ from aiogram import Bot, types
 def HomeBtn():
     home_buttons = ReplyKeyboardBuilder()
     home_buttons.add(
-        types.KeyboardButton(text="О Приложении")
+        types.KeyboardButton(text="🎓 Курсы обучения")
     )
     home_buttons.add(
         types.KeyboardButton(text="О Филиале")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Об услугах Libertex")
+        types.KeyboardButton(text="Трейдинг (Telegram канал)")
     )
     home_buttons.add(
         types.KeyboardButton(text="Как поплнить/снять торговый счет?")
@@ -31,7 +31,7 @@ def About_libertex():
         types.KeyboardButton(text="Обучение Libertex")
     )
     home_buttons.add(
-        types.KeyboardButton(text="Задать вопрос")
+        types.KeyboardButton(text="💱 Обучение спекулятивному трейдингу")
     )
     home_buttons.add(
         types.KeyboardButton(text="Главное меню")
@@ -118,6 +118,18 @@ def servus():
     )
     home_buttons.adjust(2)
     return home_buttons
+
+def tg_button():
+    home_buttons = ReplyKeyboardBuilder()
+    home_buttons.add(
+        types.KeyboardButton(text="Получить доступ в телеграм канал")
+    )
+    home_buttons.add(
+        types.KeyboardButton(text="Главное меню")
+    )
+    home_buttons.adjust(2)
+    return home_buttons
+
 
 def servus_study():
     home_buttons = ReplyKeyboardBuilder()

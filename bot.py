@@ -12,10 +12,11 @@ from tgbot.handlers.aboutBranch import aboutBranch_router
 from tgbot.handlers.aboutDonate import aboutDonate_router
 from tgbot.handlers.partner import partner_router
 from tgbot.handlers.servus import servus_router
+from tgbot.handlers.tg import tg_router
 from tgbot.middlewares.config import ConfigMiddleware
 from tgbot.services import broadcaster
 
-from tgbot.db import user_db,update_user
+from tgbot.db import user_db
 
 logger = logging.getLogger(__name__)
 
@@ -52,6 +53,7 @@ async def main():
         aboutDonate_router,
         partner_router,
         servus_router,
+        tg_router,
     ]:
         dp.include_router(router)
 
